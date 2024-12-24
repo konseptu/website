@@ -1,0 +1,93 @@
+<div class="dot-effect-container">
+  <div class="dot-effect"></div>
+  <div class="dot-effect-secondary"></div>
+</div>
+
+<style lang="scss">
+  @mixin dots($count) {
+    $text-shadow: ();
+    @for $i from 0 through $count {
+      $start-hue: 305;
+      $end-hue: 174;
+      $hue: $start-hue + ($end-hue - $start-hue) * ($i / $count);
+
+      $text-shadow:
+        $text-shadow,
+        (-0.5+ (random()) * 3) + em (-0.5+ (random()) * 3) + em 7px hsla($hue, 100%, 50%, 0.7);
+    }
+    text-shadow: $text-shadow;
+  }
+
+  .dot-effect-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .dot-effect {
+    display: block;
+    font-size: 52px;
+    color: transparent;
+
+    &::before,
+    &::after {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 3em;
+      height: 3em;
+      content: '.';
+      mix-blend-mode: screen;
+    }
+
+    &::before {
+      @include dots(40);
+      animation: 44s -27s move infinite ease-in-out alternate;
+    }
+
+    &::after {
+      @include dots(40);
+      animation: 43s -32s move infinite ease-in-out alternate;
+    }
+  }
+
+  .dot-effect-secondary {
+    display: block;
+    font-size: 52px;
+    color: transparent;
+
+    &::before,
+    &::after {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 3em;
+      height: 3em;
+      content: '.';
+      mix-blend-mode: screen;
+    }
+
+    &::before {
+      @include dots(40);
+      animation: 42s -23s move infinite ease-in-out alternate;
+    }
+
+    &::after {
+      @include dots(40);
+      animation: 41s -19s move infinite ease-in-out alternate;
+    }
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg) scale(12) translateX(-20px);
+    }
+    to {
+      transform: rotate(360deg) scale(18) translateX(20px);
+    }
+  }
+</style>

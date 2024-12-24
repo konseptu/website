@@ -17,6 +17,7 @@ export default {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
+        mono: ['Roboto Mono', ...defaultTheme.fontFamily.mono],
       },
 
       animation: {
@@ -36,6 +37,24 @@ export default {
     plugin(({ addVariant }) => {
       addVariant('intersect', '&:not([no-intersect])');
     }),
+    function ({ addUtilities }) {
+      addUtilities({
+        '.fire-gradient-text': {
+          'box-decoration-clone': 'clone',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          'color': 'transparent',
+          'background-image': 'linear-gradient(to right, var(--aw-color-primary), var(--aw-color-accent))',
+        },
+        '.ocean-gradient-text': {
+          'box-decoration-clone': 'clone',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          'color': 'transparent',
+          'background-image': 'linear-gradient(to right, var(--aw-color-primary), var(--aw-color-secondary))',
+        },
+      })
+    },
   ],
   darkMode: 'class',
 };
