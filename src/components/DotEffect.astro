@@ -4,16 +4,18 @@
 </div>
 
 <style lang="scss">
+  @use 'sass:math';
+
   @mixin dots($count) {
     $text-shadow: ();
     @for $i from 0 through $count {
-      $start-hue: 305;
-      $end-hue: 174;
-      $hue: $start-hue + ($end-hue - $start-hue) * ($i / $count);
+      $start-hue: 156;
+      $end-hue: 251;
+      $hue: $start-hue + ($end-hue - $start-hue) * math.div($i, $count);
 
       $text-shadow:
         $text-shadow,
-        (-0.5+ (random()) * 3) + em (-0.5+ (random()) * 3) + em 7px hsla($hue, 100%, 50%, 0.7);
+        (-0.5+ (math.random() * 3)) + em (-0.5+ (math.random() * 3)) + em 7px hsla($hue, 100%, 50%, 0.7);
     }
     text-shadow: $text-shadow;
   }

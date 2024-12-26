@@ -1,0 +1,40 @@
+---
+layout: '~/layouts/MarkdownLayout.astro'
+title: 'Impressum'
+description: 'Impressum'
+---
+
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+**Business Name:** KONSEPTU IT CONSULTANCY
+
+**Tax Identification Number (TIN):** 337-556-415-00000
+
+**Registered Address:** 143 F RAMOS ST COGON RAMOS 6000 CITY OF CEBU CEBU PHILIPPINES
+
+**Business Permit Number:** #200412
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Contact us via e-mail',
+      href: 'mailto:contact@konseptu.com',
+      target: '_blank',
+      icon: 'tabler:mail',
+    },
+  ]}
+>
+  <Fragment slot="title"> Let's talk about your business </Fragment>
+
+{' '}
+
+{' '}
+
+{' '}
+
+  <Fragment slot="subtitle">
+    Send us an e-mail at <a href="mailto:contact@konseptu.com">contact@konseptu.com</a> and we'll get back to you as soon
+    as possible.
+  </Fragment>
+</CallToAction>

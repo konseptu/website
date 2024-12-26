@@ -53,6 +53,12 @@ export default {
           'color': 'transparent',
           'background-image': 'linear-gradient(to right, var(--aw-color-primary), var(--aw-color-secondary))',
         },
+        '.text-shadow': {
+          'text-shadow': '2px 2px 10px rgba(255, 255, 255, 0.5)',
+        },
+        '.text-shadow-dark': {
+          'text-shadow': '2px 2px 10px rgba(0, 0, 0, 0.5)',
+        },
       })
     },
   ],
