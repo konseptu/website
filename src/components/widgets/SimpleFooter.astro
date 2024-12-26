@@ -71,7 +71,7 @@ const {
             links &&
             Array.isArray(links) &&
             links.length > 0 && (
-              <ul class="text-sm flex items-center gap-5">
+              <ul class="text-sm flex flex-col md:flex-row items-center gap-5">
                 {links.map(({ text, icon, href, ariaLabel }) => (
                   <li class="mb-2">
                     <a
