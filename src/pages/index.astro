@@ -7,6 +7,9 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import RotatingWords from '~/components/RotatingWords';
 import DotEffect from '~/components/DotEffect.astro';
+import aiAssist from '~/assets/images/ai-assist.svg';
+import queueSys from '~/assets/images/queue-sys.svg';
+import enterpriseApp from '~/assets/images/enterprise-app.svg';
 
 const verbPairs = [
   ['Streamline', 'automate'],
@@ -71,8 +74,8 @@ const metadata = {
     id="product-1"
     title="Our products"
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: enterpriseApp,
+      alt: 'Enterprise App',
     }}
     items={[
       {
@@ -108,8 +111,8 @@ const metadata = {
   <Content
     isAfterContent
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      src: queueSys,
+      alt: 'Queue System',
     }}
     items={[
       {
@@ -143,8 +146,8 @@ const metadata = {
     isReversed
     isAfterContent
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      src: aiAssist,
+      alt: 'AI Assist',
     }}
     items={[
       {
