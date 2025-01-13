@@ -1,6 +1,6 @@
-# 🚀 Project Name
+# 🚀 Konseptu Website
 
-A web application built with [Astro 5.0](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+Home website of [Konseptu](https://konseptu.com). Built with [Astro 5.0](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
 ## Tech Stack
 
