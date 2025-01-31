@@ -1,0 +1,127 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import queueSys from '~/assets/images/queuing-square-hero.png';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import queuingFeature1 from '~/assets/images/queuing-feature-1.png';
+import queuingFeature2 from '~/assets/images/queuing-feature-2.png';
+import queuingFeature3 from '~/assets/images/queuing-feature-3.png';
+import queuingFeature4 from '~/assets/images/queuing-feature-4.png';
+
+const metadata = {
+  title: 'Queuing System — Konseptu',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget -->
+  <Hero2
+    image={{ src: queueSys, alt: 'Queuing System' }}
+    title="Queuing System"
+    tagline="Streamline your customer queuing"
+    subtitle="A proven solution for managing customer flow, capable of handling thousands of tickets per day while maintaining exceptional customer satisfaction."
+  />
+
+  <!-- Key Features -->
+  <Features
+    title="Key Features"
+    items={[
+      {
+        title: 'Easy Ticket Generation',
+        description: 'Generate tickets through kiosks or remotely, allowing customers to join the queue from anywhere.',
+        icon: 'tabler:ticket',
+      },
+      {
+        title: 'Logical Queue Management',
+        description: 'Automatic categorization into priority or standard queues for efficient request handling.',
+        icon: 'tabler:list-numbers',
+      },
+      {
+        title: 'Real-Time Updates & SMS Notifications',
+        description: 'Keep customers informed through display monitors and SMS updates about their ticket status.',
+        icon: 'tabler:message-2',
+      },
+      {
+        title: 'Scalability for Peak Load',
+        description: 'Handle thousands of tickets per day with maintained high performance during busy periods.',
+        icon: 'tabler:chart-arrows',
+      },
+      {
+        title: 'Efficient Data Archiving',
+        description: 'Daily transaction data archiving for optimized system performance and safety.',
+        icon: 'tabler:archive',
+      },
+    ]}
+  />
+
+  <!-- How It Works -->
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 mb-20">
+    <div class="mb-12 text-center">
+      <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl">How It Works</h2>
+      <p class="mt-4 text-xl text-gray-600 dark:text-gray-400">
+        A streamlined process designed for efficiency and customer satisfaction.
+      </p>
+    </div>
+
+    <Content isReversed image={{ src: queuingFeature1, alt: 'Ticket Generation' }}>
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ticket Generation</h3>
+        Customers generate tickets via kiosks or remotely, without the need to be on-site.
+      </Fragment>
+    </Content>
+
+    <Content image={{ src: queuingFeature2, alt: 'Queue Management Process' }}>
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Queue Management</h3>
+        Tickets are automatically sorted into priority or FIFO (first-in, first-out) queues. You can also customize the queuing
+        logic to fit your business needs.
+      </Fragment>
+    </Content>
+
+    <Content isReversed image={{ src: queuingFeature3, alt: 'Customized Processing' }}>
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Customized Processing</h3>
+        Queuing is managed according to your business logic. Our aim is to help make it as simple yet flexible while accommodating
+        your needs.
+      </Fragment>
+    </Content>
+
+    <Content image={{ src: queuingFeature4, alt: 'Remote Monitoring' }}>
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Convenient Monitoring</h3>
+        Customers track their ticket status either via on-site display monitors or remotely via SMS notifications. You won't
+        have to worry about issues like long waiting times and customer dissatisfaction.
+      </Fragment>
+    </Content>
+  </div>
+
+  <!-- Why Choose Us -->
+  <Features
+    title="Why Choose Our Queuing System?"
+    items={[
+      {
+        title: 'Efficiency',
+        description: 'Accelerate customer service by automatically categorizing and prioritizing tickets.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Customization',
+        description: 'Tailored to meet your specific business logic and roles, ensuring smooth, adaptable workflows.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Comprehensive Solution',
+        description: 'Complete, end-to-end solution including both software and necessary devices.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Clear Communication',
+        description: 'Keep customers informed with live updates on display monitors or via SMS notifications.',
+        icon: 'tabler:messages',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle"> Experience the benefits of a modern, efficient queuing solution. </Fragment>
+  </Features>
+</Layout>

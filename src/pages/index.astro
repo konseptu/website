@@ -5,39 +5,30 @@ import LivelyHero from '~/components/widgets/LivelyHero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import RotatingWords from '~/components/RotatingWords';
-import DotEffect from '~/components/DotEffect.astro';
-import aiAssist from '~/assets/images/ai-assist.svg';
-import queueSys from '~/assets/images/queue-sys.svg';
-import enterpriseApp from '~/assets/images/enterprise-app.svg';
-
-const verbPairs = [
-  ['Streamline', 'automate'],
-  ['Digitalize', 'up-scale'],
-  ['Re-imagine', 'optimize'],
-];
+// import aiAssist from '~/assets/images/ai-assist.svg';
+import queueSys from '~/assets/images/queuing-square-hero.png';
+import userFeedback from '~/assets/images/user-feedback-square-hero.png';
+import enterpriseApp from '~/assets/images/enterprise-app-square-hero.png';
+import infrastructure from '~/assets/images/infrastructure-square-hero.png';
 
 const metadata = {
-  title: 'Konseptu — upscale and digitize your processes with us!',
+  title: 'Konseptu — upscale and digitize your business with us!',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <DotEffect />
   <!-- Hero Widget ******************* -->
 
   <LivelyHero tagline="Ready for the next step?">
     <Fragment slot="title">
-      <span class="text-shadow dark:text-shadow-dark">
-        <RotatingWords client:load verbPairs={verbPairs} />
-        &nbsp;your business with us!
-      </span>
+      <span class="font-bold ocean-gradient-text">Upscale</span> and <span class="font-bold ocean-gradient-text"
+        >digitize</span
+      > your business with us!
     </Fragment>
 
     <Fragment slot="subtitle">
-      Here at <span class="font-bold ocean-gradient-text">Konseptu</span>, we're committed to delivering all your
-      digital business needs.
+      Here at <span class="font-bold">Konseptu</span>, we're committed to delivering all your digital business needs.
     </Fragment>
 
     <Fragment slot="content">
@@ -101,8 +92,16 @@ const metadata = {
     </Fragment>
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Enterprise Application System</h3>
-      Complete digitization of your business processes with robust, secure, and scalable solutions designed for your specific
-      needs.
+      Digitize your business with our comprehensive suite of digital solutions designed to streamline your operations, enhance
+      productivity, and improve collaboration across all departments.
+      <div class="mt-6">
+        <a
+          href="/products/enterprise-app"
+          class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-semibold transition duration-150 ease-in-out"
+        >
+          See more →
+        </a>
+      </div>
     </Fragment>
 
     <Fragment slot="bg">
@@ -139,7 +138,16 @@ const metadata = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Queuing System</h3>
-      Enhance customer satisfaction with intelligent queuing solutions that reduce wait times and optimize service flows.
+      Streamline your customer queuing with our proven solution, capable of handling thousands of tickets per day while maintaining
+      exceptional customer satisfaction.
+      <div class="mt-6">
+        <a
+          href="/products/queuing-system"
+          class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-semibold transition duration-150 ease-in-out"
+        >
+          See more →
+        </a>
+      </div>
     </Fragment>
 
     <Fragment slot="bg">
@@ -153,17 +161,65 @@ const metadata = {
     isReversed
     isAfterContent
     image={{
+      src: userFeedback,
+      alt: 'User Feedback System',
+    }}
+    items={[
+      {
+        title: 'Simple kiosk interface',
+        description: 'Intuitive touch-screen design with one-tap feedback submission for maximum customer engagement',
+      },
+      {
+        title: 'AI-powered insights',
+        description: 'Smart tag-based system that automatically generates textual feedback and sentiment analysis',
+      },
+      {
+        title: 'Real-time analytics',
+        description: 'Comprehensive dashboard with instant insights, trends, and customizable reports',
+      },
+      {
+        title: 'High performance',
+        description: 'Lightning-fast response times with offline capability and automatic synchronization',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">User Feedback System</h3>
+      Transform your customer feedback collection with our intelligent kiosk-based solution that makes gathering and analyzing
+      customer experiences effortless.
+      <div class="mt-6">
+        <a
+          href="/products/user-feedback"
+          class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-semibold transition duration-150 ease-in-out"
+        >
+          See more →
+        </a>
+      </div>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    isReversed
+    isAfterContent
+    image={{
       src: aiAssist,
       alt: 'Online Business Suite',
     }}
     items={[
       {
         title: 'Swift deployment',
-        description: 'Get your website live in as little as 3 days',
+        description: 'Get your website live in as little as 5 days',
       },
       {
         title: 'Complete digital package',
-        description: 'Includes hosting, Google listings, SEO monitoring and boosting, and AI translation',
+        description:
+          'Includes hosting, Google Business Profile, Google Maps, SEO monitoring and boosting, and AI translation',
       },
       {
         title: 'Flexible options',
@@ -180,6 +236,60 @@ const metadata = {
         Online Business Expansion Suite
       </h3>
       Accelerate your online presence with rapid website development and comprehensive digital solutions.
+      <div class="mt-6">
+        <a
+          href="/products/online-business"
+          class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-semibold transition duration-150 ease-in-out"
+        >
+          See more →
+        </a>
+      </div>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    image={{
+      src: infrastructure,
+      alt: 'Infrastructure Solutions',
+    }}
+    items={[
+      {
+        title: 'Complete security suite',
+        description: 'Includes intrusion detection, CCTV, and network security',
+      },
+      {
+        title: 'Professional network integration',
+        description: 'Includes structured cabling and professional network integration',
+      },
+      {
+        title: 'Office hardware and firmware',
+        description: 'From operating systems to workstations and servers',
+      },
+      {
+        title: 'Virtualization options',
+        description: 'Efficient server and desktop virtualization systems',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Infrastructure Solutions</h3>
+      Upscale your business with reliable infrastructure solutions like servers, workstations, networking, and virtualization
+      systems.
+      <div class="mt-6">
+        <a
+          href="/products/infrastructure"
+          class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-semibold transition duration-150 ease-in-out"
+        >
+          See more →
+        </a>
+      </div>
     </Fragment>
 
     <Fragment slot="bg">

@@ -2,6 +2,11 @@
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 
+import enterpriseHero from '~/assets/images/enterprise-app-long-hero.png';
+import infrastructureHero from '~/assets/images/infrastructure-long-hero.png';
+import queueingHero from '~/assets/images/queuing-long-hero.png';
+import userFeedbackHero from '~/assets/images/user-feedback-long-hero.png';
+
 import type { Hero as Props } from '~/types';
 
 const {
@@ -16,10 +21,21 @@ const {
   id,
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+const backgroundImages = [enterpriseHero, infrastructureHero, queueingHero, userFeedbackHero];
 ---
 
 <section class="relative md:-mt-[76px] not-prose h-screen md:h-fit" {...id ? { id } : {}}>
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+  <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    {
+      backgroundImages.map((img) => (
+        <div
+          class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 bg-hero-fade"
+          data-background-image
+          style={`background-image: url(${img.src}); background-size: cover; background-position: center;`}
+        />
+      ))
+    }
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
@@ -97,3 +113,36 @@ const {
     </div>
   </div>
 </section>
+
+<style>
+  .bg-hero-fade {
+    filter: grayscale(100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+    mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+  }
+</style>
+
+<script>
+  let currentIndex = 0;
+  const backgrounds = document.querySelectorAll('[data-background-image]');
+  const TRANSITION_INTERVAL = 5000; // 5 seconds
+
+  function showNextBackground() {
+    // Hide current background
+    backgrounds[currentIndex].classList.remove('opacity-10');
+    backgrounds[currentIndex].classList.add('opacity-0');
+
+    // Update index
+    currentIndex = (currentIndex + 1) % backgrounds.length;
+
+    // Show next background
+    backgrounds[currentIndex].classList.remove('opacity-0');
+    backgrounds[currentIndex].classList.add('opacity-10');
+  }
+
+  // Show first background immediately
+  backgrounds[0].classList.add('opacity-10');
+
+  // Start the rotation
+  setInterval(showNextBackground, TRANSITION_INTERVAL);
+</script>

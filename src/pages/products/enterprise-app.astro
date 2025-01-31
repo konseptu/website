@@ -1,0 +1,164 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import enterpriseApp from '~/assets/images/enterprise-app-square-hero.png';
+import erp from '~/assets/images/erp.png';
+import hrm from '~/assets/images/hrm.png';
+import cms from '~/assets/images/cms.png';
+import timeTracking from '~/assets/images/time-tracking.png';
+import dms from '~/assets/images/dms.png';
+import Hero2 from '~/components/widgets/Hero2.astro';
+
+const metadata = {
+  title: 'Enterprise Application Systems — Konseptu',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget -->
+  <Hero2
+    image={{ src: enterpriseApp, alt: 'Enterprise Application Systems' }}
+    tagline="Digitize your business operations"
+    title="Enterprise Application Systems"
+    subtitle="Comprehensive suite of digital solutions designed to streamline your business operations, enhance productivity, and improve collaboration across all departments."
+  />
+
+  <!-- HRM Section -->
+  <Content
+    isReversed
+    image={{ src: hrm, alt: 'Human Resource Management' }}
+    title="Human Resource Management"
+    items={[
+      {
+        title: 'Streamlined HR Processes',
+        description: 'Automate core HR functions, from recruitment to payroll and performance management.',
+      },
+      {
+        title: 'Employee Data Management',
+        description: 'Maintain accurate and up-to-date records, ensuring compliance and smooth HR operations.',
+      },
+      {
+        title: 'Employee Engagement',
+        description: 'Enhance employee satisfaction with tools for performance tracking, feedback, and development.',
+      },
+      {
+        title: 'Scalable & Customizable',
+        description: "Adapt the system to your company's specific needs and grow with your business.",
+      },
+    ]}
+  >
+    <Fragment slot="subtitle">
+      Transform your HR operations with our comprehensive human resource management system.
+    </Fragment>
+  </Content>
+
+  <!-- CMS Section -->
+  <Content
+    title="Content Management System"
+    image={{ src: cms, alt: 'Content Management System' }}
+    items={[
+      {
+        title: 'Centralized Content Creation',
+        description: 'Easily manage and publish content across multiple platforms with a unified system.',
+      },
+      {
+        title: 'Collaboration Tools',
+        description: 'Empower teams to work together on content creation, review, and approval in real time.',
+      },
+      {
+        title: 'SEO & Analytics',
+        description:
+          'Built-in tools for optimizing content and tracking performance to improve visibility and engagement.',
+      },
+      {
+        title: 'Scalable Solutions',
+        description: 'Whether you have a small website or enterprise-level platform, our CMS grows with you.',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle"> Manage your content efficiently with our powerful CMS solution. </Fragment>
+  </Content>
+
+  <!-- Time Tracking Section -->
+  <Content
+    isReversed
+    title="Time Tracking System"
+    image={{ src: timeTracking, alt: 'Time Tracking System' }}
+    items={[
+      {
+        title: 'Efficient Time Management',
+        description:
+          'Track employee hours, project times, and attendance effortlessly, improving accuracy in payroll and project management.',
+      },
+      {
+        title: 'Real-Time Reporting',
+        description: 'Monitor time usage and generate reports to identify inefficiencies and improve productivity.',
+      },
+      {
+        title: 'Integrates with Payroll',
+        description: 'Seamlessly integrate time data with payroll systems to reduce manual errors.',
+      },
+      {
+        title: 'User-Friendly Interface',
+        description: 'Simple, intuitive design for both employees and managers to track time effectively.',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle">
+      Track and manage time efficiently with our comprehensive time tracking solution.
+    </Fragment>
+  </Content>
+
+  <!-- ERP Section -->
+  <Content
+    title="Enterprise Resource Planning"
+    image={{ src: erp, alt: 'ERP System' }}
+    items={[
+      {
+        title: 'Unified Business Processes',
+        description: 'Integrate finance, HR, supply chain, and other key business functions into one cohesive system.',
+      },
+      {
+        title: 'Real-Time Data Access',
+        description: 'Make informed decisions with access to real-time data and comprehensive analytics.',
+      },
+      {
+        title: 'Streamlined Operations',
+        description: 'Reduce redundancies and improve efficiency by automating workflows across departments.',
+      },
+      {
+        title: 'Customizable & Scalable',
+        description: 'Tailor the ERP system to fit your unique business needs and scale it as you grow.',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle"> Unify your business processes with our comprehensive ERP solution. </Fragment>
+  </Content>
+
+  <!-- DMS Section -->
+  <Content
+    isReversed
+    title="Document Management System"
+    image={{ src: dms, alt: 'Document Management System' }}
+    items={[
+      {
+        title: 'Secure Document Storage',
+        description: 'Safely store and organize documents with encrypted access and strict security controls.',
+      },
+      {
+        title: 'Easy Retrieval & Sharing',
+        description: 'Quickly find and share documents with your team, enhancing collaboration and productivity.',
+      },
+      {
+        title: 'Compliance & Audit Trails',
+        description: 'Maintain compliance with industry standards by tracking document versions and access logs.',
+      },
+      {
+        title: 'Automated Workflow',
+        description: 'Automate document approval processes and enhance operational efficiency.',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle"> Manage your documents securely and efficiently with our DMS solution. </Fragment>
+  </Content>
+</Layout>

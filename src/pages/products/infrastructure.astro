@@ -1,0 +1,164 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features from '~/components/widgets/Features.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import BrandGrid from '~/components/widgets/BrandGrid.astro';
+import infrastructure from '~/assets/images/infrastructure-square-hero.png';
+
+// Importing images
+import sapLogo from '~/assets/product-logos/sap.png';
+import ibmLogo from '~/assets/product-logos/IBM_website.png';
+import hpLogo from '~/assets/product-logos/hp01.png';
+import microsoftLogo from '~/assets/product-logos/microsoft.png';
+import apcLogo from '~/assets/product-logos/apc.png';
+import acerLogo from '~/assets/product-logos/acer.png';
+import ciscoLogo from '~/assets/product-logos/cisco.png';
+import dellLogo from '~/assets/product-logos/dell-technologies.png';
+import lenovoLogo from '~/assets/product-logos/lenovo.png';
+import awsLogo from '~/assets/product-logos/aws.png';
+
+const metadata = {
+  title: 'Infrastructure Solutions — Konseptu',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget -->
+  <Hero2
+    image={{ src: infrastructure, alt: 'Infrastructure Solutions' }}
+    tagline="Upscale your infrastructure"
+    title="Infrastructure Solutions"
+    subtitle="Reliable infrastructure solutions like servers, workstations, networking, and virtualization systems for businesses of all sizes."
+  />
+
+  <!-- IDS Section -->
+  <Features
+    title="Intrusion Detection System"
+    subtitle="Protect your network with our advanced intrusion detection and prevention systems."
+    items={[
+      {
+        title: 'Real-Time Monitoring',
+        description:
+          'Continuous network monitoring to detect unauthorized access and potential threats as they happen.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Advanced Detection Methods',
+        description: 'Combines signature-based and anomaly-based detection for comprehensive threat identification.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Scalable Protection',
+        description: 'Flexible systems designed to protect businesses of any size at every level.',
+        icon: 'tabler:shield',
+      },
+      {
+        title: 'Detailed Analytics',
+        description: 'Comprehensive insights into your network security with detailed threat analysis and reporting.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  />
+
+  <!-- Network Integration Section -->
+  <Features
+    title="Network Integration"
+    subtitle="Build a robust foundation with our professional network integration services."
+    items={[
+      {
+        title: 'Custom Network Design',
+        description: 'Tailored network layouts ensuring smooth and efficient operations for your specific needs.',
+        icon: 'tabler:layout',
+      },
+      {
+        title: 'Professional Installation',
+        description: 'High-quality cabling and professional installation following industry best practices.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Future-Proof Solutions',
+        description: 'Designed with growth in mind, allowing easy network expansion as your business evolves.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Complete Documentation',
+        description: 'Detailed network diagrams and labeling for easy maintenance and troubleshooting.',
+        icon: 'tabler:book',
+      },
+    ]}
+  />
+
+  <!-- Workstations Section -->
+  <Features
+    title="Desktop and Laptop Solutions"
+    subtitle="Equip your team with reliable and secure workstation solutions."
+    items={[
+      {
+        title: 'High-Performance Hardware',
+        description: 'Latest technology workstations tailored to your specific business requirements.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'Enhanced Security',
+        description: 'Biometric authentication, encrypted storage, and secure boot protection.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Complete Management',
+        description: 'Full lifecycle management including updates, patches, and asset tracking.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Reliable Support',
+        description: 'Comprehensive warranties and dedicated technical support to minimize downtime.',
+        icon: 'tabler:headset',
+      },
+    ]}
+  />
+
+  <!-- Server & CCTV Section -->
+  <Features
+    title="Server & Surveillance"
+    subtitle="Protect your business with advanced server and surveillance solutions."
+    items={[
+      {
+        title: 'Secure Server Solutions',
+        description: 'On-site servers with enhanced physical security and data encryption.',
+        icon: 'tabler:server',
+      },
+      {
+        title: 'HD Surveillance',
+        description: 'High-definition CCTV systems with remote access and 24/7 monitoring.',
+        icon: 'tabler:camera',
+      },
+      {
+        title: 'Redundant Systems',
+        description: 'Backup power supplies and disaster recovery solutions for business continuity.',
+        icon: 'tabler:power',
+      },
+      {
+        title: 'Smart Analytics',
+        description: 'AI-powered video analytics and intelligent motion detection systems.',
+        icon: 'tabler:chart-line',
+      },
+    ]}
+  />
+
+  <!-- Product Brands Section -->
+  <BrandGrid
+    title="Trusted Technology Partners"
+    subtitle="We work with industry-leading brands to deliver reliable infrastructure solutions"
+    brands={[
+      { title: 'SAP', image: sapLogo.src },
+      { title: 'IBM', image: ibmLogo.src },
+      { title: 'HP', image: hpLogo.src },
+      { title: 'Microsoft', image: microsoftLogo.src },
+      { title: 'APC', image: apcLogo.src },
+      { title: 'Acer', image: acerLogo.src },
+      { title: 'Cisco', image: ciscoLogo.src },
+      { title: 'Dell Technologies', image: dellLogo.src },
+      { title: 'Lenovo', image: lenovoLogo.src },
+      { title: 'AWS', image: awsLogo.src },
+    ]}
+  />
+</Layout>

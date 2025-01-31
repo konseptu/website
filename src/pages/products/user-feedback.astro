@@ -1,0 +1,100 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import userFeedback from '~/assets/images/user-feedback-square-hero.png';
+const metadata = {
+  title: 'User Feedback System — Konseptu',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+  <Hero2
+    image={{ src: userFeedback, alt: 'User Feedback System' }}
+    title="User Feedback System"
+    tagline="Transform your feedback collection"
+    subtitle="An intelligent kiosk-based solution that makes gathering and analyzing customer experiences effortless and insightful."
+  />
+
+  <!-- Features Widget *************** -->
+  <Features
+    id="features"
+    title="Comprehensive Features"
+    subtitle="Our User Feedback System comes packed with everything you need to collect, analyze, and act on customer feedback."
+    columns={3}
+    items={[
+      {
+        title: 'Intuitive Kiosk Interface',
+        description:
+          'Touch-optimized design with one-tap feedback submission and multi-language support for maximum accessibility.',
+        icon: 'tabler:device-analytics',
+      },
+      {
+        title: 'AI-Powered Analysis',
+        description:
+          'Smart tag-based system that automatically generates detailed feedback and performs sentiment analysis.',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Real-time Dashboard',
+        description:
+          'Live analytics with customizable reports, trend analysis, and actionable insights at your fingertips.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'High Performance',
+        description: 'Sub-second response times with offline capability and automatic data synchronization.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+  <Features
+    title="Key Benefits"
+    subtitle="Why businesses choose our User Feedback System"
+    columns={2}
+    items={[
+      {
+        title: 'Increased Response Rates',
+        description: 'Simple interface and quick feedback process leads to significantly higher participation rates.',
+        icon: 'tabler:arrow-up-right',
+      },
+      {
+        title: 'Actionable Insights',
+        description: 'AI-powered analytics help identify trends and areas for improvement in real-time.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Cost Efficiency',
+        description: 'Reduce expenses associated with traditional survey methods and manual data analysis.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Time Savings',
+        description: 'Automated processes and instant analytics save hours of manual work each week.',
+        icon: 'tabler:clock',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: 'mailto:contact@konseptu.com',
+        target: '_blank',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready to transform your feedback process?</Fragment>
+    <Fragment slot="subtitle">
+      Contact us today to schedule a demo and see how our User Feedback System can benefit your business.
+    </Fragment>
+  </CallToAction>
+</Layout>
