@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
 import enterpriseApp from '~/assets/images/enterprise-app-square-hero.png';
 import erp from '~/assets/images/erp.png';
 import hrm from '~/assets/images/hrm.png';
@@ -161,4 +162,55 @@ const metadata = {
   >
     <Fragment slot="subtitle"> Manage your documents securely and efficiently with our DMS solution. </Fragment>
   </Content>
+
+  <!-- Features Section -->
+  <Features
+    title="How We Do It"
+    items={[
+      {
+        title: 'Develop From Scratch',
+        description: 'We build custom solutions tailored to your specific business needs from the ground up.',
+      },
+      {
+        title: 'Take Existing Project',
+        description: 'We enhance and integrate with your existing systems to improve functionality and performance.',
+      },
+      {
+        title: 'Off the Shelf',
+        description:
+          'We provide ready-made solutions that can be quickly implemented to meet your business requirements.',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle"> Discover the three ways we deliver solutions to meet your business needs. </Fragment>
+  </Features>
+
+  <!-- Why Choose Us -->
+  <Features
+    title="Why Choose Us?"
+    items={[
+      {
+        title: 'Efficiency',
+        description: 'Accelerate customer service by automatically categorizing and prioritizing tickets.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Customization',
+        description: 'Tailored to meet your specific business logic and roles, ensuring smooth, adaptable workflows.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Comprehensive Solution',
+        description: 'Complete, end-to-end solution including both software and necessary devices.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Clear Communication',
+        description: 'Keep customers informed with live updates on display monitors or via SMS notifications.',
+        icon: 'tabler:messages',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle"> Experience the benefits of a modern, efficient queuing solution. </Fragment>
+  </Features>
 </Layout>
