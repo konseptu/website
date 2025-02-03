@@ -12,6 +12,15 @@ export const headerData = {
       text: 'Impressum',
       href: getPermalink('/impressum'),
     },
+    {
+      text: 'Products',
+      links: [
+        { text: 'Enterprise App', href: getPermalink('/products/enterprise-app') },
+        { text: 'Queuing System', href: getPermalink('/products/queuing-system') },
+        { text: 'User Feedback System', href: getPermalink('/products/user-feedback') },
+        { text: 'Infrastructure', href: getPermalink('/products/infrastructure') },
+      ],
+    },
   ],
   showRssFeed: false,
   position: 'right',
@@ -24,8 +33,19 @@ export const footerData = {
       links: [
         { text: 'About', icon: 'tabler:info-circle', href: getPermalink('/about') },
         { text: 'Impressum', icon: 'tabler:file-description', href: getPermalink('/impressum') },
-        { text: 'Github', ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/konseptu' },
-        { text: 'contact@konseptu.com', ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:contact@konseptu.com' },
+      ],
+    },
+    {
+      title: 'Products',
+      links: [
+        { text: 'Enterprise App', icon: 'tabler:app-window', href: getPermalink('/products/enterprise-app') },
+        { text: 'Queuing System', icon: 'tabler:list', href: getPermalink('/products/queuing-system') },
+        {
+          text: 'User Feedback System',
+          icon: 'tabler:message-circle',
+          href: getPermalink('/products/user-feedback'),
+        },
+        { text: 'Infrastructure', icon: 'tabler:server', href: getPermalink('/products/infrastructure') },
       ],
     },
   ],
@@ -38,6 +58,12 @@ export const footerData = {
     alt: 'Konseptu logo',
   },
   secondaryLinks: [{ text: 'Website', ariaLabel: 'Website', icon: 'tabler:globe', href: 'https://konseptu.com' }],
-  socialLinks: [],
+  socialLinks: [
+    { text: 'Facebook', ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://facebook.com/konseptuit' },
+    { text: 'Viber', ariaLabel: 'Viber', icon: 'tabler:message-circle', href: 'https://viber.com/konseptuit' },
+    { text: 'Github', ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/konseptu' },
+    { text: 'contact@konseptu.com', ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:contact@konseptu.com' },
+  ],
   footNote: '© Konseptu 2024. All rights reserved.',
+  description: 'Upscale and digitize your business with us!',
 };
