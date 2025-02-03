@@ -7,18 +7,21 @@ export const headerData = {
     {
       text: 'About Us',
       href: getPermalink('/about'),
+      icon: 'tabler:info-circle',
     },
     {
       text: 'Impressum',
       href: getPermalink('/impressum'),
+      icon: 'tabler:file-description',
     },
     {
       text: 'Products',
+      icon: 'tabler:apps',
       links: [
-        { text: 'Enterprise App', href: getPermalink('/products/enterprise-app') },
-        { text: 'Queuing System', href: getPermalink('/products/queuing-system') },
-        { text: 'User Feedback System', href: getPermalink('/products/user-feedback') },
-        { text: 'Infrastructure', href: getPermalink('/products/infrastructure') },
+        { text: 'Enterprise App', href: getPermalink('/products/enterprise-app'), icon: 'tabler:app-window' },
+        { text: 'Queuing System', href: getPermalink('/products/queuing-system'), icon: 'tabler:list' },
+        { text: 'User Feedback System', href: getPermalink('/products/user-feedback'), icon: 'tabler:message-circle' },
+        { text: 'Infrastructure', href: getPermalink('/products/infrastructure'), icon: 'tabler:server' },
       ],
     },
   ],
