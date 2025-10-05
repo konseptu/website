@@ -28,11 +28,17 @@ const backgroundImages = [enterpriseHero, infrastructureHero, queueingHero, user
 <section class="relative md:-mt-[76px] not-prose h-screen md:h-fit" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
     {
-      backgroundImages.map((img) => (
-        <div
-          class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 bg-hero-fade"
+      backgroundImages.map((img, i) => (
+        <Image
+          src={img}
+          alt=""
+          class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${i === 0 ? 'opacity-40' : 'opacity-0'} bg-hero-fade`}
           data-background-image
-          style={`background-image: url(${img.src}); background-size: cover; background-position: center;`}
+          loading={'eager'}
+          fetchpriority={'high'}
+          format="webp"
+          widths={[640, 768, 1024, 1280, 1536, 1920]}
+          sizes="100vw"
         />
       ))
     }
@@ -117,8 +123,8 @@ const backgroundImages = [enterpriseHero, infrastructureHero, queueingHero, user
 <style>
   .bg-hero-fade {
     filter: grayscale(100%);
-    -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-    mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+    mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
   }
 </style>
 
@@ -129,7 +135,7 @@ const backgroundImages = [enterpriseHero, infrastructureHero, queueingHero, user
 
   function showNextBackground() {
     // Hide current background
-    backgrounds[currentIndex].classList.remove('opacity-10');
+    backgrounds[currentIndex].classList.remove('opacity-40');
     backgrounds[currentIndex].classList.add('opacity-0');
 
     // Update index
@@ -137,11 +143,11 @@ const backgroundImages = [enterpriseHero, infrastructureHero, queueingHero, user
 
     // Show next background
     backgrounds[currentIndex].classList.remove('opacity-0');
-    backgrounds[currentIndex].classList.add('opacity-10');
+    backgrounds[currentIndex].classList.add('opacity-40');
   }
 
   // Show first background immediately
-  backgrounds[0].classList.add('opacity-10');
+  backgrounds[0].classList.add('opacity-40');
 
   // Start the rotation
   setInterval(showNextBackground, TRANSITION_INTERVAL);
