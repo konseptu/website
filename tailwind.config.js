@@ -43,15 +43,47 @@ export default {
           'box-decoration-clone': 'clone',
           'background-clip': 'text',
           '-webkit-background-clip': 'text',
-          'color': 'transparent',
+          color: 'transparent',
           'background-image': 'linear-gradient(to right, var(--aw-color-primary), var(--aw-color-accent))',
         },
         '.ocean-gradient-text': {
           'box-decoration-clone': 'clone',
           'background-clip': 'text',
           '-webkit-background-clip': 'text',
-          'color': 'transparent',
-          'background-image': 'linear-gradient(to right, var(--aw-color-primary), var(--aw-color-secondary))',
+          color: 'transparent',
+          'background-image': 'linear-gradient(to right, var(--aw-color-primary) 35%, var(--aw-color-secondary) 50%)',
+        },
+        '.ocean-right-first-gradient-text': {
+          'box-decoration-clone': 'clone',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          color: 'transparent',
+          'background-image':
+            'linear-gradient(to left, var(--aw-color-secondary) 0%, var(--aw-color-secondary-light) 100%)',
+        },
+        '.ocean-right-second-gradient-text': {
+          'box-decoration-clone': 'clone',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          color: 'transparent',
+          'background-image':
+            'linear-gradient(to left, var(--aw-color-secondary-light) 0%, var(--aw-color-text-heading) 35%)',
+        },
+        '.ocean-left-first-gradient-text': {
+          'box-decoration-clone': 'clone',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          color: 'transparent',
+          'background-image':
+            'linear-gradient(to right, var(--aw-color-primary) 0%, var(--aw-color-primary-light) 100%)',
+        },
+        '.ocean-left-second-gradient-text': {
+          'box-decoration-clone': 'clone',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          color: 'transparent',
+          'background-image':
+            'linear-gradient(to right, var(--aw-color-primary-light) 0%, var(--aw-color-text-heading) 35%)',
         },
         '.text-shadow': {
           'text-shadow': '2px 2px 10px rgba(255, 255, 255, 0.5)',
@@ -59,7 +91,7 @@ export default {
         '.text-shadow-dark': {
           'text-shadow': '2px 2px 10px rgba(0, 0, 0, 0.5)',
         },
-      })
+      });
     },
   ],
   darkMode: 'class',

@@ -22,15 +22,27 @@ const metadata = {
   <link slot="head" rel="preload" as="image" href={enterpriseHero.src} fetchpriority="high" />
   <!-- Hero Widget ******************* -->
 
-  <LivelyHero tagline="Ready for the next step?">
+  <LivelyHero
+    tagline="Your trusted local IT partner"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Free Consultation',
+        href: '#cta',
+      },
+    ]}
+  >
     <Fragment slot="title">
-      <span class="font-bold ocean-gradient-text">Upscale</span> and <span class="font-bold ocean-gradient-text"
-        >digitize</span
-      > your business with us!
+      <span class="font-bold ocean-left-first-gradient-text">All-in-one</span>
+      <span class="font-bold ocean-left-second-gradient-text">software</span>
+      <span class="font-bold ocean-right-second-gradient-text">and infra</span>
+      <span class="font-bold ocean-right-first-gradient-text">solutions</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Here at <span class="font-bold">Konseptu</span>, we're committed to delivering all your digital business needs.
+      From ready-made or custom applications to complete IT infrastructure — <span class="font-extrabold"
+        >we deliver everything your business needs</span
+      >.
     </Fragment>
 
     <Fragment slot="content">
@@ -333,6 +345,7 @@ const metadata = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
+    id="cta"
     actions={[
       {
         variant: 'primary',

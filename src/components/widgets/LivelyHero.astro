@@ -32,7 +32,7 @@ const backgroundImages = [enterpriseHero, infrastructureHero, queueingHero, user
         <Image
           src={img}
           alt=""
-          class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${i === 0 ? 'opacity-40' : 'opacity-0'} bg-hero-fade`}
+          class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${i === 0 ? 'opacity-30' : 'opacity-0'} bg-hero-fade`}
           data-background-image
           loading={'eager'}
           fetchpriority={'high'}
@@ -135,7 +135,7 @@ const backgroundImages = [enterpriseHero, infrastructureHero, queueingHero, user
 
   function showNextBackground() {
     // Hide current background
-    backgrounds[currentIndex].classList.remove('opacity-40');
+    backgrounds[currentIndex].classList.remove('opacity-30');
     backgrounds[currentIndex].classList.add('opacity-0');
 
     // Update index
@@ -143,11 +143,11 @@ const backgroundImages = [enterpriseHero, infrastructureHero, queueingHero, user
 
     // Show next background
     backgrounds[currentIndex].classList.remove('opacity-0');
-    backgrounds[currentIndex].classList.add('opacity-40');
+    backgrounds[currentIndex].classList.add('opacity-30');
   }
 
   // Show first background immediately
-  backgrounds[0].classList.add('opacity-40');
+  backgrounds[0].classList.add('opacity-30');
 
   // Start the rotation
   setInterval(showNextBackground, TRANSITION_INTERVAL);
