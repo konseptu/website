@@ -5,12 +5,35 @@ import LivelyHero from '~/components/widgets/LivelyHero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import InfrastructureProducts from '~/components/widgets/InfrastructureProducts.astro';
 // import aiAssist from '~/assets/images/ai-assist.svg';
 import queueSys from '~/assets/images/queuing-square-hero.png';
 import userFeedback from '~/assets/images/user-feedback-square-hero.png';
 import enterpriseApp from '~/assets/images/enterprise-app-square-hero.png';
-import infrastructure from '~/assets/images/infrastructure-square-hero.png';
 import enterpriseHero from '~/assets/images/enterprise-app-long-hero.png';
+
+// Infrastructure product logos
+import ibmLogo from '~/assets/product-logos/ibm.png';
+import lenovoLogo from '~/assets/product-logos/lenovo.png';
+import dellLogo from '~/assets/product-logos/dell.png';
+import hpeLogo from '~/assets/product-logos/hpe.png';
+import acerLogo from '~/assets/product-logos/acer.png';
+import intelLogo from '~/assets/product-logos/intel.png';
+import microsoftLogo from '~/assets/product-logos/microsoft.png';
+import awsLogo from '~/assets/product-logos/aws.png';
+import peplinkLogo from '~/assets/product-logos/peplink.gif';
+import ruijieLogo from '~/assets/product-logos/ruijie.svg';
+import ciscoLogo from '~/assets/product-logos/cisco.png';
+import ubiquitiLogo from '~/assets/product-logos/ubiquiti.png';
+import hikvisionLogo from '~/assets/product-logos/hikvision.png';
+import dahuaLogo from '~/assets/product-logos/dahua.png';
+import zktecoLogo from '~/assets/product-logos/zkteco.png';
+import apcLogo from '~/assets/product-logos/apc.png';
+import cyberpowerLogo from '~/assets/product-logos/cyberpower.png';
+import vertivLogo from '~/assets/product-logos/vertiv.png';
+import epsonLogo from '~/assets/product-logos/epson.png';
+import eloLogo from '~/assets/product-logos/elo.png';
+import sangforLogo from '~/assets/product-logos/sangfor.avif';
 
 const metadata = {
   title: 'Konseptu — upscale and digitize your business with us!',
@@ -265,51 +288,77 @@ const metadata = {
     </Fragment>
   </Content> -->
 
-  <!-- Content Widget **************** -->
+  <!-- Infrastructure Products Widget **************** -->
 
-  <Content
-    isAfterContent
-    image={{
-      src: infrastructure,
-      alt: 'Infrastructure Solutions',
-    }}
-    items={[
+  <InfrastructureProducts
+    title="Enterprise IT Infrastructure & Solutions"
+    subtitle="We specialize in delivering high-performance IT infrastructure, security, and software solutions for businesses of all sizes."
+    topTierBrands={[
+      { name: 'IBM', logo: ibmLogo },
+      { name: 'Lenovo', logo: lenovoLogo },
+      { name: 'Dell', logo: dellLogo },
+      { name: 'HPE', logo: hpeLogo },
+      { name: 'Microsoft', logo: microsoftLogo },
+      { name: 'Cisco', logo: ciscoLogo },
+      { name: 'Hikvision', logo: hikvisionLogo },
+    ]}
+    categories={[
       {
-        title: 'Complete security suite',
-        description: 'Includes intrusion detection, CCTV, and network security',
+        title: 'Computing Solutions',
+        brands: [
+          { name: 'IBM', logo: ibmLogo, description: 'Enterprise Servers, Storage & Software' },
+          {
+            name: 'Lenovo',
+            logo: lenovoLogo,
+            description: 'Business Laptops, Desktops, ThinkPad, ThinkCentre, ThinkSystem',
+          },
+          { name: 'Dell', logo: dellLogo, description: 'OptiPlex, PowerEdge Servers, Latitude Laptops' },
+          { name: 'HPE', logo: hpeLogo, description: 'Servers, Storage, Networking' },
+          { name: 'Acer', logo: acerLogo, description: 'Business Notebooks, Monitors & Projectors' },
+          { name: 'Intel', logo: intelLogo, description: 'Processors, Server Components & Compute Modules' },
+          { name: 'Microsoft', logo: microsoftLogo, description: 'Windows OS, Office Suite, Microsoft 365, Azure' },
+          { name: 'AWS', logo: awsLogo, description: 'Cloud Solutions & Deployment' },
+        ],
       },
       {
-        title: 'Professional network integration',
-        description: 'Includes structured cabling and professional network integration',
+        title: 'Networking & Connectivity',
+        brands: [
+          { name: 'Ubiquiti', logo: ubiquitiLogo, description: 'UniFi Access Points, Routers, Network Management' },
+          { name: 'Peplink', logo: peplinkLogo, description: 'SD-WAN, LTE Routers, VPN Solutions' },
+          { name: 'Ruijie Networks', logo: ruijieLogo, description: 'Wi-Fi Solutions, Access Points, Switches' },
+          { name: 'Cisco', logo: ciscoLogo, description: 'Enterprise Networking, Security, VoIP, Switches' },
+          { name: 'Sangfor', logo: sangforLogo, description: 'Network Security, SD-WAN, Cloud Solutions' },
+        ],
       },
       {
-        title: 'Office hardware and firmware',
-        description: 'From operating systems to workstations and servers',
+        title: 'Security & Surveillance',
+        brands: [
+          { name: 'Hikvision', logo: hikvisionLogo, description: 'CCTV, IP Cameras, NVRs, Access Control' },
+          { name: 'Dahua', logo: dahuaLogo, description: 'Surveillance Systems, Smart Security Solutions' },
+          { name: 'ZKTeco', logo: zktecoLogo, description: 'Biometric Access Control, Time Attendance' },
+        ],
       },
       {
-        title: 'Virtualization options',
-        description: 'Efficient server and desktop virtualization systems',
+        title: 'Power Solutions',
+        brands: [
+          { name: 'APC UPS', logo: apcLogo, description: 'Uninterruptible Power Supply, Surge Protectors' },
+          { name: 'CyberPower UPS', logo: cyberpowerLogo, description: 'Backup Power & Surge Protection' },
+          { name: 'Vertiv', logo: vertivLogo, description: 'Power Management, Data Center Infrastructure' },
+        ],
+      },
+      {
+        title: 'Peripherals & Office Equipment',
+        brands: [
+          { name: 'Epson', logo: epsonLogo, description: 'Printers, Projectors, Scanners' },
+          { name: 'Elo Touch Solutions', logo: eloLogo, description: 'Touchscreen Monitors & Displays' },
+        ],
       },
     ]}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Infrastructure Solutions</h3>
-      Upscale your business with reliable infrastructure solutions like servers, workstations, networking, and virtualization
-      systems.
-      <div class="mt-6">
-        <a
-          href="/products/infrastructure"
-          class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-semibold transition duration-150 ease-in-out"
-        >
-          See more →
-        </a>
-      </div>
-    </Fragment>
-
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </InfrastructureProducts>
 
   <!-- Features Widget *************** -->
 
@@ -349,18 +398,45 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Contact us via e-mail',
+        text: 'Email us',
         href: 'mailto:contact@konseptu.com',
         target: '_blank',
         icon: 'tabler:mail',
       },
+      {
+        variant: 'primary',
+        text: 'Send SMS',
+        href: 'sms:+639524778680',
+        target: '_blank',
+        icon: 'tabler:message',
+      },
+      {
+        variant: 'primary',
+        text: 'Live Chat',
+        href: '#',
+        icon: 'tabler:message-circle',
+      },
     ]}
   >
-    <Fragment slot="title"> Let's talk about your business </Fragment>
+    <Fragment slot="title"> Consult with us for free today </Fragment>
 
     <Fragment slot="subtitle">
-      Send us an e-mail at <a href="mailto:contact@konseptu.com">contact@konseptu.com</a> and we'll get back to you as soon
-      as possible.
+      Schedule with us for onsite visits and presentations as long as it's within Cebu Province, or virtual calls instead
     </Fragment>
   </CallToAction>
+
+  <script>
+    // Live chat handler
+    document.addEventListener('DOMContentLoaded', () => {
+      const liveChatBtn = document.querySelector('a[href="#"]');
+      if (liveChatBtn && liveChatBtn.textContent?.includes('Live Chat')) {
+        liveChatBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (typeof window.Tawk_API !== 'undefined') {
+            window.Tawk_API.toggle();
+          }
+        });
+      }
+    });
+  </script>
 </Layout>

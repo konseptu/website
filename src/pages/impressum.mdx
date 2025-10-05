@@ -18,23 +18,29 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
   actions={[
     {
       variant: 'primary',
-      text: 'Contact us via e-mail',
+      text: 'Email us',
       href: 'mailto:contact@konseptu.com',
       target: '_blank',
       icon: 'tabler:mail',
     },
+    {
+      variant: 'primary',
+      text: 'Send SMS',
+      href: 'sms:+639524778680',
+      target: '_blank',
+      icon: 'tabler:message',
+    },
+    {
+      variant: 'primary',
+      text: 'Live Chat',
+      href: '#',
+      icon: 'tabler:message-circle',
+    },
   ]}
 >
-  <Fragment slot="title"> Let's talk about your business </Fragment>
-
-{' '}
-
-{' '}
-
-{' '}
+  <Fragment slot="title"> Consult with us for free today </Fragment>
 
   <Fragment slot="subtitle">
-    Send us an e-mail at <a href="mailto:contact@konseptu.com">contact@konseptu.com</a> and we'll get back to you as soon
-    as possible.
+    Schedule with us for onsite visits and presentations as long as it's within Cebu Province, or virtual calls instead
   </Fragment>
 </CallToAction>

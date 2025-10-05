@@ -1,0 +1,265 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Image from '~/components/common/Image.astro';
+import type { ImageMetadata } from 'astro';
+
+export interface Brand {
+  name: string;
+  logo: ImageMetadata;
+  description?: string;
+}
+
+export interface ProductCategory {
+  title: string;
+  icon?: string;
+  brands: Brand[];
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  categories: ProductCategory[];
+  topTierBrands?: Brand[];
+  showConsultationBadge?: boolean;
+  id?: string;
+  isDark?: boolean;
+  classes?: Record<string, string>;
+  bg?: string;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  categories = [],
+  showConsultationBadge = true,
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: 'max-w-4xl mx-auto mb-8 md:mb-12',
+      title: 'text-3xl md:text-4xl font-bold tracking-tight mb-4 font-heading',
+      subtitle: 'text-lg md:text-xl text-muted dark:text-slate-300',
+    }}
+  />
+
+  <!-- Gallery Layout: Main View + Thumbnails -->
+  <div class="mt-12">
+    <!-- Mobile: Horizontal scrollable thumbnails -->
+    <div class="lg:hidden mb-6 overflow-x-auto">
+      <div class="flex gap-3 pb-2" data-thumbnail-mobile>
+        {
+          categories.map((category, index) => (
+            <button
+              class={`flex-shrink-0 px-4 py-3 rounded-lg transition-all ${
+                index === 0
+                  ? 'bg-white dark:bg-white text-gray-900 border border-gray-300 shadow-md'
+                  : 'bg-gray-500 dark:bg-gray-500 text-gray-900 hover:bg-white hover:shadow-sm hover:border hover:border-gray-300'
+              }`}
+              data-category-btn={index}
+            >
+              <div class="text-sm font-semibold whitespace-nowrap mb-2">{category.title}</div>
+              <div class="flex flex-wrap gap-1 justify-center">
+                {category.brands.slice(0, 4).map((brand) => (
+                  <Image
+                    src={brand.logo}
+                    alt={brand.name}
+                    class={
+                      brand.name === 'Hikvision' || brand.name === 'ZKTeco'
+                        ? '!h-3 !w-10 !object-contain'
+                        : '!h-3 !w-6 !object-contain'
+                    }
+                    style={brand.name === 'ZKTeco' || brand.name === 'Sangfor' ? 'filter: drop-shadow(0 0 1px rgba(0,0,0,0.8))' : ''}
+                    width={brand.name === 'Hikvision' || brand.name === 'ZKTeco' ? 40 : 24}
+                    height={12}
+                  />
+                ))}
+              </div>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Desktop: Side-by-side layout -->
+    <div class="flex flex-col lg:flex-row gap-6">
+      <!-- Main View (70%) -->
+      <div class="lg:w-[70%]">
+        {
+          categories.map((category, index) => (
+            <div class={`category-content ${index === 0 ? 'block' : 'hidden'}`} data-category-content={index}>
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                {category.title}
+              </h3>
+              <div class="grid grid-cols-4 auto-rows-fr gap-4 md:gap-6">
+                {category.brands.map((brand, brandIndex) => {
+                  // Define grid spans for different brands in different categories
+                  let colSpan = 'col-span-1';
+                  let rowSpan = 'row-span-1';
+                  let logoSize = 'h-12 md:h-16';
+
+                  // Computing Solutions: Lenovo 2x2, Microsoft 2x1
+                  if (category.title === 'Computing Solutions') {
+                    if (brand.name === 'Lenovo') {
+                      colSpan = 'col-span-2';
+                      rowSpan = 'row-span-2';
+                      logoSize = 'h-20 md:h-28';
+                    } else if (brand.name === 'Microsoft') {
+                      colSpan = 'col-span-2';
+                      logoSize = 'h-14 md:h-18';
+                    }
+                  }
+
+                  // Networking: Ubiquiti 2x2
+                  if (category.title === 'Networking & Connectivity') {
+                    if (brand.name === 'Ubiquiti') {
+                      colSpan = 'col-span-2';
+                      rowSpan = 'row-span-2';
+                      logoSize = 'h-20 md:h-28';
+                    }
+                  }
+
+                  // Security: Hikvision 2x2, others 2x1
+                  if (category.title === 'Security & Surveillance') {
+                    if (brand.name === 'Hikvision') {
+                      colSpan = 'col-span-2';
+                      rowSpan = 'row-span-2';
+                      logoSize = 'h-20 md:h-28';
+                    } else {
+                      colSpan = 'col-span-2';
+                      logoSize = 'h-14 md:h-18';
+                    }
+                  }
+
+                  // Power Solutions: CyberPower 2x2, others 2x1
+                  if (category.title === 'Power Solutions') {
+                    if (brand.name === 'CyberPower UPS') {
+                      colSpan = 'col-span-2';
+                      rowSpan = 'row-span-2';
+                      logoSize = 'h-20 md:h-28';
+                    } else {
+                      colSpan = 'col-span-2';
+                      logoSize = 'h-14 md:h-18';
+                    }
+                  }
+
+                  // Peripherals & Office Equipment: Both 2x2
+                  if (category.title === 'Peripherals & Office Equipment') {
+                    colSpan = 'col-span-2';
+                    rowSpan = 'row-span-2';
+                    logoSize = 'h-20 md:h-28';
+                  }
+
+                  return (
+                    <div
+                      class={`flex flex-col items-center justify-center p-4 md:p-6 bg-white dark:bg-gray-100 rounded-xl shadow-sm hover:shadow-lg transition-all ${colSpan} ${rowSpan}`}
+                    >
+                      <div class="flex items-center justify-center mb-3">
+                        <Image
+                          src={brand.logo}
+                          alt={brand.name}
+                          class={`${logoSize} w-auto !object-contain`}
+                          style={brand.name === 'ZKTeco' || brand.name === 'Sangfor' ? 'filter: drop-shadow(0 0 1px rgba(0,0,0,0.8))' : ''}
+                          widths={[100, 150, 200]}
+                          sizes="(max-width: 768px) 100px, 150px"
+                        />
+                      </div>
+                      {brand.description && (
+                        <p class="text-xs md:text-sm text-center text-gray-600 dark:text-gray-700 leading-relaxed">
+                          {brand.description}
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Thumbnails Sidebar (30%) - Desktop only -->
+      <div class="hidden lg:block lg:w-[30%]">
+        <div class="space-y-4 sticky top-24">
+          {
+            categories.map((category, index) => (
+              <button
+                class={`w-full text-center p-4 rounded-lg transition-all ${
+                  index === 0
+                    ? 'bg-white dark:bg-white text-gray-900 border border-gray-300 shadow-md'
+                    : 'bg-gray-500 dark:bg-gray-500 text-gray-700 hover:bg-white hover:shadow-sm hover:border hover:border-gray-300'
+                }`}
+                data-category-btn={index}
+              >
+                <div class="font-semibold text-base mb-3">{category.title}</div>
+                <div class="flex flex-wrap gap-2 justify-center">
+                  {category.brands.slice(0, 6).map((brand) => (
+                    <Image
+                      src={brand.logo}
+                      alt={brand.name}
+                      class={
+                        brand.name === 'Hikvision' || brand.name === 'ZKTeco'
+                          ? '!h-4 !w-12 !object-contain'
+                          : 'h-4 !w-8 !object-contain'
+                      }
+                      style={brand.name === 'ZKTeco' || brand.name === 'Sangfor' ? 'filter: drop-shadow(0 0 1px rgba(0,0,0,0.8))' : ''}
+                      width={brand.name === 'Hikvision' || brand.name === 'ZKTeco' ? 48 : 32}
+                      height={16}
+                    />
+                  ))}
+                </div>
+              </button>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>
+
+<script>
+  // Gallery interaction
+  const categoryBtns = document.querySelectorAll('[data-category-btn]');
+  const categoryContents = document.querySelectorAll('[data-category-content]');
+
+  categoryBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const index = btn.getAttribute('data-category-btn');
+
+      // Hide all content
+      categoryContents.forEach((content) => {
+        content.classList.add('hidden');
+        content.classList.remove('block');
+      });
+
+      // Show selected content
+      const targetContent = document.querySelector(`[data-category-content="${index}"]`);
+      if (targetContent) {
+        targetContent.classList.remove('hidden');
+        targetContent.classList.add('block');
+      }
+
+      // Update button styles
+      categoryBtns.forEach((b) => {
+        // Remove active state
+        b.classList.remove('bg-white', 'dark:bg-white', 'text-gray-900', 'shadow-md', 'border', 'border-gray-300');
+        // Add inactive state
+        b.classList.add('bg-gray-500', 'dark:bg-gray-500', 'text-gray-700');
+      });
+      // Add active state to clicked button
+      btn.classList.remove('bg-gray-500', 'dark:bg-gray-500', 'text-gray-700');
+      btn.classList.add('bg-white', 'dark:bg-white', 'text-gray-900', 'shadow-md', 'border', 'border-gray-300');
+    });
+  });
+</script>

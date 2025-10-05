@@ -268,4 +268,27 @@ import { UI } from 'astrowind:config';
     s1.setAttribute('crossorigin', '*');
     s0.parentNode.insertBefore(s1, s0);
   })();
+
+  // Live chat button handler
+  const setupLiveChatHandler = () => {
+    const liveChatBtns = document.querySelectorAll('a[href="#"]');
+    liveChatBtns.forEach(btn => {
+      if (btn.textContent && btn.textContent.includes('Live Chat')) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (typeof window.Tawk_API !== 'undefined') {
+            window.Tawk_API.toggle();
+          }
+        });
+      }
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupLiveChatHandler);
+  } else {
+    setupLiveChatHandler();
+  }
+
+  document.addEventListener('astro:after-swap', setupLiveChatHandler);
 </script>
