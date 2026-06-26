@@ -1,0 +1,85 @@
+---
+import type { ImageMetadata } from 'astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Image from '~/components/common/Image.astro';
+
+export interface Client {
+  name: string;
+  logo: ImageMetadata;
+  /** Intrinsic aspect ratio, scaled so the longest edge is ~300px. Keeps logos crisp and undistorted. */
+  width: number;
+  height: number;
+  /** Square/round seal logos that need more vertical room to match the optical weight of wide wordmarks. */
+  badge?: boolean;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  clients: Client[];
+  id?: string;
+  isDark?: boolean;
+  classes?: Record<string, string>;
+  bg?: string;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  clients = [],
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <!-- Soft brand glow for atmosphere -->
+  <div class="pointer-events-none absolute inset-0 -z-[1] flex justify-center overflow-hidden" aria-hidden="true">
+    <div
+      class="mt-10 h-64 w-[36rem] max-w-full rounded-full bg-primary/10 blur-3xl dark:bg-primary/20"
+    >
+    </div>
+  </div>
+
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: 'max-w-3xl mx-auto mb-10 md:mb-14',
+      title: 'text-3xl md:text-4xl font-bold tracking-tight mb-4 font-heading',
+      subtitle: 'text-lg md:text-xl text-muted dark:text-slate-300',
+    }}
+  />
+
+  <ul class="flex flex-wrap justify-center gap-4 sm:gap-5 lg:gap-6" role="list">
+    {
+      clients.map((client) => (
+        <li class="w-[9.5rem] sm:w-44 lg:w-48">
+          <div class="group relative flex h-full flex-col items-center rounded-2xl border border-gray-200/80 bg-white px-5 pb-4 pt-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-xl dark:border-transparent dark:bg-gray-100">
+            <div class="flex w-full flex-1 items-center justify-center">
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={client.width}
+                height={client.height}
+                class:list={[
+                  'w-full !object-contain transition-transform duration-300 group-hover:scale-105',
+                  client.badge ? 'max-h-[5.5rem] md:max-h-24' : 'max-h-11 md:max-h-12',
+                ]}
+              />
+            </div>
+            <span class="mt-5 text-center text-[0.7rem] font-medium uppercase leading-tight tracking-wide text-gray-500 transition-colors duration-300 group-hover:text-primary dark:text-gray-500">
+              {client.name}
+            </span>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</WidgetWrapper>

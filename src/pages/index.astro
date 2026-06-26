@@ -6,6 +6,7 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import InfrastructureProducts from '~/components/widgets/InfrastructureProducts.astro';
+import OurClients from '~/components/widgets/OurClients.astro';
 // import aiAssist from '~/assets/images/ai-assist.svg';
 import queueSys from '~/assets/images/queuing-square-hero.png';
 import userFeedback from '~/assets/images/user-feedback-square-hero.png';
@@ -34,6 +35,15 @@ import vertivLogo from '~/assets/product-logos/vertiv.png';
 import epsonLogo from '~/assets/product-logos/epson.png';
 import eloLogo from '~/assets/product-logos/elo.png';
 import sangforLogo from '~/assets/product-logos/sangfor.avif';
+
+// Client logos
+import ipiClientLogo from '~/assets/client-logos/ipi.png';
+import clinicaPrimeLogo from '~/assets/client-logos/clinicaprime.png';
+import tallecoLogo from '~/assets/client-logos/talleco.png';
+import inaMicroLogo from '~/assets/client-logos/inamicro.png';
+import seihaLogo from '~/assets/client-logos/seiha.png';
+import iloiloMissionLogo from '~/assets/client-logos/iloilo-mission-hospital.png';
+import dotLogo from '~/assets/client-logos/department-of-tourism.svg';
 
 const metadata = {
   title: 'Konseptu — upscale and digitize your business with us!',
@@ -359,6 +369,32 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </InfrastructureProducts>
+
+  <!-- Our Clients Widget *********** -->
+
+  <OurClients
+    id="clients"
+    title="Trusted by organizations across the Philippines"
+    clients={[
+      { name: 'IPI Philippines', logo: ipiClientLogo, width: 300, height: 185 },
+      { name: 'Clinica Prime', logo: clinicaPrimeLogo, width: 300, height: 64 },
+      { name: 'Talleco — JobTarget', logo: tallecoLogo, width: 300, height: 96 },
+      { name: 'Ina Micro Opto', logo: inaMicroLogo, width: 300, height: 46 },
+      { name: 'Seiha English Academy', logo: seihaLogo, width: 287, height: 300, badge: true },
+      { name: 'Iloilo Mission Hospital', logo: iloiloMissionLogo, width: 300, height: 291, badge: true },
+      { name: 'Department of Tourism', logo: dotLogo, width: 300, height: 300, badge: true },
+    ]}
+  >
+    <Fragment slot="tagline">Our Clients</Fragment>
+    <Fragment slot="subtitle">
+      From healthcare and government to manufacturing and education — teams nationwide rely on Konseptu to build, run, and
+      scale their systems.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </OurClients>
 
   <!-- Features Widget *************** -->
 
