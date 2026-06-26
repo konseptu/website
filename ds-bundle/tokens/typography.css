@@ -1,0 +1,10 @@
+/* Konseptu typography tokens.
+   All three text roles map to Inter Variable; mono is Roboto Mono.
+   Reference as var(--aw-font-*). */
+
+:root {
+  --aw-font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --aw-font-serif: 'Inter Variable', ui-serif, Georgia, serif;
+  --aw-font-heading: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --aw-font-mono: 'Roboto Mono', ui-monospace, monospace;
+}

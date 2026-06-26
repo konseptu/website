@@ -1,0 +1,6 @@
+{
+  "projectId": "b67c395e-ddd6-4b2f-8579-f8fc9f882eae",
+  "shape": "tokens-only",
+  "note": "Source repo is the Konseptu Astro website, not a component library. Synced as a tokens-only bundle (colors, fonts, signature utility classes). No _ds_bundle.js / components. Built into ds-bundle/.",
+  "localDir": "ds-bundle"
+}

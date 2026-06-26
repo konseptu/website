@@ -1,0 +1,41 @@
+/* Konseptu brand fonts — bundled from the website repo.
+   Inter Variable (sans / serif / heading) and Roboto Mono (mono). */
+
+/* Inter Variable — single variable face spanning weights 100–900 */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('./inter-latin-wght-normal.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('./inter-latin-wght-italic.woff2') format('woff2-variations');
+}
+
+/* Roboto Mono — the three weights the site uses */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./RobotoMono-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./RobotoMono-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./RobotoMono-Bold.ttf') format('truetype');
+}

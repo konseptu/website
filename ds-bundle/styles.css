@@ -1,0 +1,25 @@
+/* Konseptu design tokens — entry stylesheet.
+ *
+ * This is the single stylesheet a rendered design receives; everything below is
+ * reachable through this @import closure. Import this file and you get the brand
+ * fonts, color tokens (light + dark), typography tokens, and signature utility
+ * classes.
+ *
+ * The site is dark-mode-first: add class="dark" on a wrapping element (or <html>)
+ * to get the shipped brand palette. Without it you get the light palette.
+ */
+
+@import './fonts/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/utilities.css';
+
+/* Sensible page defaults using the tokens. */
+:root {
+  color-scheme: light dark;
+}
+body {
+  font-family: var(--aw-font-sans);
+  color: var(--aw-color-text-default);
+  background-color: var(--aw-color-bg-page);
+}

@@ -1,0 +1,39 @@
+/* Konseptu color tokens.
+   The site ships dark-mode-first (config ui.theme = "dark:only"); both palettes
+   are provided here. Light is the :root default; .dark overrides to the shipped
+   brand palette. Reference these as var(--aw-color-*). */
+
+:root {
+  /* Brand */
+  --aw-color-primary: #411ce6;
+  --aw-color-primary-light: #7152fd;
+  --aw-color-secondary: #00bf77;
+  --aw-color-secondary-light: #68fcc5;
+  --aw-color-accent: #e66100;
+
+  /* Text */
+  --aw-color-text-heading: rgb(0 0 0);
+  --aw-color-text-default: rgb(16 16 16);
+  --aw-color-text-muted: rgb(16 16 16 / 66%);
+
+  /* Surfaces */
+  --aw-color-bg-page: rgb(255 255 255);
+  --aw-color-bg-page-dark: rgb(3 6 32);
+}
+
+.dark {
+  /* Brand */
+  --aw-color-primary: #481fff;
+  --aw-color-primary-light: #7152fd;
+  --aw-color-secondary: #00ff9f;
+  --aw-color-secondary-light: #68fcc5;
+  --aw-color-accent: #ff4f00;
+
+  /* Text */
+  --aw-color-text-heading: rgb(247 248 248);
+  --aw-color-text-default: rgb(229 236 246);
+  --aw-color-text-muted: rgb(229 236 246 / 66%);
+
+  /* Surfaces */
+  --aw-color-bg-page: rgb(3 6 32);
+}
