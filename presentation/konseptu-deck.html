@@ -27,6 +27,11 @@
     src: url('file:///Users/vocafeuvre/Projects/website/src/assets/fonts/RobotoMono/RobotoMono-Bold.ttf') format('truetype');
     font-weight: 700; font-style: normal; font-display: block;
   }
+  @font-face {
+    font-family: 'Roboto Serif';
+    src: url('file:///Users/vocafeuvre/Projects/website/src/assets/fonts/RobotoSerif/RobotoSerif-Variable.ttf') format('truetype');
+    font-weight: 100 900; font-style: normal; font-display: block;
+  }
 
   /* ---------- Tokens ---------- */
   :root {
@@ -200,10 +205,10 @@
   .prod h3 { font-size: 18px; font-weight:700; letter-spacing:-.01em; margin: 6px 0 7px; }
   .prod p { font-size: 13px; line-height:1.5; color: var(--muted); }
 
-  /* turno */
-  .turno-brand { display:flex; align-items:baseline; gap:13px; margin-bottom: 12px; }
-  .turno-brand .nm { font-size: 30px; font-weight: 800; letter-spacing:-.02em; color: var(--ink); }
-  .turno-brand .lb { font-family:'Roboto Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); border-left:1px solid var(--line); padding-left:13px; }
+  /* product brand header (studio / turno / revue) */
+  .brandhead { display:flex; align-items:baseline; gap:13px; margin-bottom: 12px; }
+  .brandhead .nm { font-family: 'Roboto Serif', Georgia, serif; font-size: 31px; font-weight: 800; letter-spacing:-.015em; color: var(--ink); }
+  .brandhead .lb { font-family:'Roboto Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); border-left:1px solid var(--line); padding-left:13px; }
   .featgrid { display:grid; grid-template-columns: 1fr 1fr; gap: 16px 26px; }
   .fg h4 { display:flex; align-items:center; gap:9px; font-size:14.5px; font-weight:700; color:var(--ink); margin-bottom:8px; }
   .fg .dot { width:8px; height:8px; border-radius:2px; }
@@ -279,7 +284,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="#481fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
       </div>
       <h3>Software</h3>
-      <p>Ready-made products and custom applications, including enterprise systems, queue management, and customer feedback, that digitize and streamline how you work.</p>
+      <p>Ready-made products and fully custom applications, from queue management and customer feedback to software built from scratch, that digitize and streamline how you work.</p>
     </div>
     <div class="card pillar">
       <div class="ic" style="background:var(--green-50);">
@@ -313,9 +318,9 @@
     <div class="prod">
       <div class="thumb"><img src="file:///Users/vocafeuvre/Projects/website/presentation/assets/enterprise.jpg" alt=""></div>
       <div class="body">
-        <div class="tag">Enterprise Application System</div>
-        <h3>Digitize the whole business</h3>
-        <p>HR, content, time tracking, ERP, and document management in one integrated, secure, scalable suite.</p>
+        <div class="tag">studio · Custom Software</div>
+        <h3>Build any software you need</h3>
+        <p>HR, ERP, time tracking, content, and documents, or something entirely new, all built around how you work.</p>
       </div>
     </div>
     <div class="prod">
@@ -329,9 +334,9 @@
     <div class="prod">
       <div class="thumb"><img src="file:///Users/vocafeuvre/Projects/website/presentation/assets/feedback.jpg" alt=""></div>
       <div class="body">
-        <div class="tag">User Feedback System</div>
+        <div class="tag">revue · Customer Feedback</div>
         <h3>Understand every customer</h3>
-        <p>One-tap kiosk feedback with AI-powered sentiment insights and real-time analytics dashboards.</p>
+        <p>An easy point-of-service form you build yourself, smiley, thumbs, or nested tags, with live dashboards and reports.</p>
       </div>
     </div>
   </div>
@@ -341,30 +346,27 @@
   </div>
 </section>
 
-<!-- ============ 4. ENTERPRISE APP ============ -->
+<!-- ============ 4. STUDIO / CUSTOM SOFTWARE ============ -->
 <section class="slide">
-  <div class="head">
-    <div class="eyebrow"><span class="bar"></span>Product · Enterprise Application System</div>
-    <h2 class="title">Digitize your business, <svg class="gt" width="277" height="46" viewBox="0 0 277 46" style="font-size:38px"><defs><linearGradient id="og4" x1="0" y1="0" x2="1" y2="0.14"><stop offset="0" stop-color="#481fff"/><stop offset=".28" stop-color="#3a5cff"/><stop offset=".6" stop-color="#1597d6"/><stop offset="1" stop-color="#00bf77"/></linearGradient></defs><text x="0" y="37" font-family="Inter" font-weight="800" font-size="38" letter-spacing="-0.95" fill="url(#og4)">all in one place.</text></svg></h2>
+  <div class="head" style="margin-bottom:20px;">
+    <div class="eyebrow"><span class="bar"></span>Product · Custom Software</div>
+    <div class="brandhead">
+      <span class="nm">studio</span>
+      <span class="lb">Custom Software Development</span>
+    </div>
+    <h2 class="title" style="font-size:31px;">Bespoke software, <svg class="gt" width="372" height="38" viewBox="0 0 372 38" style="font-size:31px"><defs><linearGradient id="og4" x1="0" y1="0" x2="1" y2="0.14"><stop offset="0" stop-color="#481fff"/><stop offset=".28" stop-color="#3a5cff"/><stop offset=".6" stop-color="#1597d6"/><stop offset="1" stop-color="#00bf77"/></linearGradient></defs><text x="0" y="30" font-family="Inter" font-weight="800" font-size="31" letter-spacing="-0.78" fill="url(#og4)">tailored to your workflow.</text></svg></h2>
   </div>
   <div class="row">
+    <div class="col"><div class="media"><img src="file:///Users/vocafeuvre/Projects/website/presentation/assets/enterprise.jpg" alt="studio custom software"></div></div>
     <div class="col" style="display:flex; flex-direction:column;">
-      <p class="lead">A comprehensive suite that streamlines operations, boosts productivity, and improves collaboration across every department.</p>
-      <div class="modlist">
-        <span class="pill">HR Management</span>
-        <span class="pill">Content Management</span>
-        <span class="pill">Time Tracking</span>
-        <span class="pill">ERP</span>
-        <span class="pill">Document Management</span>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:13px;">
-        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Complete business digitization.</b> One platform for HR, content, time, resources, and documents.</span></div>
-        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Seamless integration.</b> Works with your existing systems and processes.</span></div>
-        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Security-first.</b> Enterprise-grade encryption and access controls.</span></div>
-        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Scalable architecture.</b> Grows with your business needs.</span></div>
+      <p class="lead">Every business runs differently. Studio builds software shaped to how your team actually works, gets the core live fast, then grows from there.</p>
+      <div style="display:flex; flex-direction:column; gap:13px; margin-top:20px;">
+        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Core first, so you go live sooner.</b> We build the essential workflow first so you can start running quickly, then add the rest module by module.</span></div>
+        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Pre-made modules, none of the off-shelf baggage.</b> Start from proven parts for HR, ERP, time tracking, and documents, each customized as close as possible to how your stakeholders need it.</span></div>
+        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>One team for software and hardware.</b> We build the app and supply the servers, network, and security it runs on.</span></div>
+        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Yours to grow.</b> Secure, scalable architecture that integrates with your existing systems and expands as you do.</span></div>
       </div>
     </div>
-    <div class="col"><div class="media"><img src="file:///Users/vocafeuvre/Projects/website/presentation/assets/enterprise.jpg" alt="Enterprise Application System"></div></div>
   </div>
   <div class="foot">
     <img src="file:///Users/vocafeuvre/Projects/website/src/assets/images/default.png" alt="Konseptu" />
@@ -376,7 +378,7 @@
 <section class="slide">
   <div class="head" style="margin-bottom:20px;">
     <div class="eyebrow"><span class="bar"></span>Product · Queue Management</div>
-    <div class="turno-brand">
+    <div class="brandhead">
       <span class="nm">turno</span>
       <span class="lb">Queue Management System</span>
     </div>
@@ -393,13 +395,6 @@
         <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Leave and return with the Flex lane.</b> An SMS brings customers back, and they rejoin by QR or Messenger.</span></div>
         <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Works fully offline.</b> Keeps running even when your internet doesn't.</span></div>
       </div>
-      <div style="display:flex; gap:8px; margin-top:auto; padding-top:20px; flex-wrap:wrap;">
-        <span class="pill green">Priority lanes</span>
-        <span class="pill green">Self-service kiosk</span>
-        <span class="pill green">Live displays</span>
-        <span class="pill green">Works offline</span>
-        <span class="pill green">Leave &amp; return</span>
-      </div>
     </div>
     <div class="col"><div class="media"><img src="file:///Users/vocafeuvre/Projects/website/presentation/assets/queuing.jpg" alt="turno queue management"></div></div>
   </div>
@@ -410,21 +405,25 @@
   </div>
 </section>
 
-<!-- ============ 6. USER FEEDBACK ============ -->
+<!-- ============ 6. REVUE / CUSTOMER FEEDBACK ============ -->
 <section class="slide">
-  <div class="head">
-    <div class="eyebrow"><span class="bar"></span>Product · User Feedback System</div>
-    <h2 class="title">Understand customers <svg class="gt" width="210" height="46" viewBox="0 0 210 46" style="font-size:38px"><defs><linearGradient id="og6" x1="0" y1="0" x2="1" y2="0.14"><stop offset="0" stop-color="#481fff"/><stop offset=".28" stop-color="#3a5cff"/><stop offset=".6" stop-color="#1597d6"/><stop offset="1" stop-color="#00bf77"/></linearGradient></defs><text x="0" y="37" font-family="Inter" font-weight="800" font-size="38" letter-spacing="-0.95" fill="url(#og6)">in real time.</text></svg></h2>
+  <div class="head" style="margin-bottom:20px;">
+    <div class="eyebrow"><span class="bar"></span>Product · Customer Feedback</div>
+    <div class="brandhead">
+      <span class="nm">revue</span>
+      <span class="lb">Customer Feedback System</span>
+    </div>
+    <h2 class="title" style="font-size:31px;">Understand your customer <svg class="gt" width="392" height="38" viewBox="0 0 392 38" style="font-size:31px"><defs><linearGradient id="og6" x1="0" y1="0" x2="1" y2="0.14"><stop offset="0" stop-color="#481fff"/><stop offset=".28" stop-color="#3a5cff"/><stop offset=".6" stop-color="#1597d6"/><stop offset="1" stop-color="#00bf77"/></linearGradient></defs><text x="0" y="30" font-family="Inter" font-weight="800" font-size="31" letter-spacing="-0.78" fill="url(#og6)">where it matters the most.</text></svg></h2>
   </div>
   <div class="row">
-    <div class="col"><div class="media"><img src="file:///Users/vocafeuvre/Projects/website/presentation/assets/feedback.jpg" alt="User Feedback System"></div></div>
+    <div class="col"><div class="media"><img src="file:///Users/vocafeuvre/Projects/website/presentation/assets/feedback.jpg" alt="revue customer feedback"></div></div>
     <div class="col" style="display:flex; flex-direction:column;">
-      <p class="lead">An intelligent, kiosk-based solution that makes gathering and analyzing customer experiences effortless, right at the point of service.</p>
-      <div style="display:flex; flex-direction:column; gap:14px; margin-top:20px;">
-        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Simple kiosk interface.</b> Intuitive touch-screen with one-tap feedback submission.</span></div>
-        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>AI-powered insights.</b> Tag-based system that auto-generates textual feedback and sentiment analysis.</span></div>
-        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Real-time analytics.</b> Dashboards with instant insights, trends, and customizable reports.</span></div>
-        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>High performance.</b> Fast response times with offline capability and automatic sync.</span></div>
+      <p class="lead">Revue captures how customers really feel right at the point of service, in just a tap or two. Friction low enough that you hear from everyone, not only the complainers, with a form you shape as simple or as detailed as you want.</p>
+      <div style="display:flex; flex-direction:column; gap:13px; margin-top:20px;">
+        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Build the form your way.</b> As shallow or as granular as you like, a smiley-face scale, repeatable thumbs up or down, or nested tag questions, and change it anytime without a developer.</span></div>
+        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>See it all on a live dashboard.</b> Every response lands instantly, with ratings, trends, and reports you can filter and export, and it keeps working even when you're offline.</span></div>
+        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Fits how you serve.</b> Bring it to the table, set it at the counter, or station it by the exit, wherever earns the most honest responses.</span></div>
+        <div class="feat"><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ft"><b>Make every rating specific.</b> When you want, staff can log what a customer actually received, so they rate their real order rather than a vague overall score.</span></div>
       </div>
     </div>
   </div>
