@@ -22,3 +22,17 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 .astro
+
+# Playwright MCP session artifacts
+.playwright-mcp/
+
+# Redundant archive bundles (sources are tracked, zips are not)
+ds-bundle.zip
+src/assets/product-logos.zip
+
+# Design-sync transient recompile marker
+ds-bundle/_ds_needs_recompile
+
+# Stray working notes / drafts under product-logos
+src/assets/product-logos/*.docx
+src/assets/product-logos/ad-widget-overview.md
