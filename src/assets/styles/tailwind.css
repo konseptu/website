@@ -26,7 +26,24 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('../fonts/RobotoSerif/RobotoSerif-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer utilities {
+  /* Lowercase serif wordmark for product names (studio / turno / revue),
+     matching the heading treatment used in the company deck. */
+  .wordmark {
+    font-family: 'Roboto Serif', Georgia, serif;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: -0.015em;
+    text-transform: lowercase;
+  }
   .bg-page {
     background-color: var(--aw-color-bg-page);
   }
