@@ -1,0 +1,101 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import userFeedback from '~/assets/images/user-feedback-square-hero.png';
+const metadata = {
+  title: 'revue · Customer Feedback',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+  <Hero2
+    image={{ src: userFeedback, alt: 'revue · Customer Feedback' }}
+    tagline="Customer Feedback"
+    subtitle="Understand your customers where it matters most. Revue captures how they really feel right at the point of service, in just a tap or two, with a form you shape as simple or as detailed as you want."
+  >
+    <Fragment slot="title"><span class="wordmark">revue</span></Fragment>
+  </Hero2>
+
+  <!-- Features Widget *************** -->
+  <Features
+    id="features"
+    title="Comprehensive Features"
+    subtitle="Everything you need to collect feedback at the point of service and act on it."
+    columns={3}
+    items={[
+      {
+        title: 'Build the form your way',
+        description:
+          'Smiley faces, thumbs, or nested tags. Shape it as simple or as detailed as you want, and change it anytime.',
+        icon: 'tabler:forms',
+      },
+      {
+        title: 'Feedback at the point of service',
+        description:
+          'Place it where customers are, or bring it over at bill-out, so you hear from everyone, not only the complainers.',
+        icon: 'tabler:device-tablet',
+      },
+      {
+        title: 'Live dashboard',
+        description:
+          'Every response lands instantly, with ratings, trends, and reports you can filter and export.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Works offline',
+        description: 'Fast response times and full offline capability, with automatic sync once you reconnect.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+  <Features
+    title="Key Benefits"
+    subtitle="Why businesses choose Revue"
+    columns={2}
+    items={[
+      {
+        title: 'Hear from everyone',
+        description: 'Friction low enough that customers actually respond, not only the ones who came to complain.',
+        icon: 'tabler:arrow-up-right',
+      },
+      {
+        title: 'Make every rating specific',
+        description: 'When you want, staff can log what a customer actually received, so they rate their real order rather than a vague overall score.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Cost Efficiency',
+        description: 'Reduce the expense of traditional survey methods and manual data collection.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Time Savings',
+        description: 'Responses, trends, and reports are ready instantly, saving hours of manual work each week.',
+        icon: 'tabler:clock',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: 'mailto:contact@konseptu.com',
+        target: '_blank',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready to transform your feedback process?</Fragment>
+    <Fragment slot="subtitle">
+      Contact us today to schedule a demo and see how Revue can benefit your business.
+    </Fragment>
+  </CallToAction>
+</Layout>

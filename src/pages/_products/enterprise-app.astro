@@ -11,18 +11,19 @@ import dms from '~/assets/images/dms.png';
 import Hero2 from '~/components/widgets/Hero2.astro';
 
 const metadata = {
-  title: 'Enterprise Application Systems — Konseptu',
+  title: 'studio · Custom Software',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero2 Widget -->
   <Hero2
-    image={{ src: enterpriseApp, alt: 'Enterprise Application Systems' }}
-    tagline="Digitize your business operations"
-    title="Enterprise Application Systems"
-    subtitle="Comprehensive suite of digital solutions designed to streamline your business operations, enhance productivity, and improve collaboration across all departments."
-  />
+    image={{ src: enterpriseApp, alt: 'studio · Custom Software Development' }}
+    tagline="Custom Software Development"
+    subtitle="Bespoke software, tailored to how your team actually works. We get the core live fast, then grow it module by module, mixing pre-made building blocks with custom work so you get exactly what you need without the off-the-shelf baggage."
+  >
+    <Fragment slot="title"><span class="wordmark">studio</span></Fragment>
+  </Hero2>
 
   <!-- HRM Section -->
   <Content
@@ -190,27 +191,27 @@ const metadata = {
     title="Why Choose Us?"
     items={[
       {
-        title: 'Efficiency',
-        description: 'Accelerate customer service by automatically categorizing and prioritizing tickets.',
+        title: 'Core first',
+        description: 'We get your essential workflow live fast, then expand module by module, so you see value sooner.',
         icon: 'tabler:rocket',
       },
       {
-        title: 'Customization',
-        description: 'Tailored to meet your specific business logic and roles, ensuring smooth, adaptable workflows.',
+        title: 'Built around you',
+        description: 'Customized as close as possible to how your team actually works, not the other way around.',
         icon: 'tabler:settings',
       },
       {
-        title: 'Comprehensive Solution',
-        description: 'Complete, end-to-end solution including both software and necessary devices.',
+        title: 'Software and hardware, one team',
+        description: 'The same people who build your software can spec and set up the infrastructure it runs on.',
         icon: 'tabler:package',
       },
       {
-        title: 'Clear Communication',
-        description: 'Keep customers informed with live updates on display monitors or via SMS notifications.',
-        icon: 'tabler:messages',
+        title: 'Yours to grow',
+        description: 'As your operation changes, the software changes with it. No rip-and-replace down the line.',
+        icon: 'tabler:trending-up',
       },
     ]}
   >
-    <Fragment slot="subtitle"> Experience the benefits of a modern, efficient queuing solution. </Fragment>
+    <Fragment slot="subtitle"> Reasons teams pick Studio for software built around their workflow. </Fragment>
   </Features>
 </Layout>

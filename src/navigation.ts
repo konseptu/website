@@ -14,15 +14,16 @@ export const headerData = {
       href: getPermalink('/impressum'),
       icon: 'tabler:file-description',
     },
-    {
-      text: 'Products',
-      icon: 'tabler:apps',
-      links: [
-        { text: 'Enterprise App', href: getPermalink('/products/enterprise-app'), icon: 'tabler:app-window' },
-        { text: 'Queuing System', href: getPermalink('/products/queuing-system'), icon: 'tabler:list' },
-        { text: 'User Feedback System', href: getPermalink('/products/user-feedback'), icon: 'tabler:message-circle' },
-      ],
-    },
+    // Products dropdown hidden while the studio/turno/revue product pages are being reworked.
+    // {
+    //   text: 'Products',
+    //   icon: 'tabler:apps',
+    //   links: [
+    //     { text: 'studio · Custom Software', href: getPermalink('/products/enterprise-app'), icon: 'tabler:app-window' },
+    //     { text: 'turno · Queue Management', href: getPermalink('/products/queuing-system'), icon: 'tabler:list' },
+    //     { text: 'revue · Customer Feedback', href: getPermalink('/products/user-feedback'), icon: 'tabler:message-circle' },
+    //   ],
+    // },
   ],
   showRssFeed: false,
   position: 'right',
@@ -37,18 +38,19 @@ export const footerData = {
         { text: 'Impressum', icon: 'tabler:file-description', href: getPermalink('/impressum') },
       ],
     },
-    {
-      title: 'Products',
-      links: [
-        { text: 'Enterprise App', icon: 'tabler:app-window', href: getPermalink('/products/enterprise-app') },
-        { text: 'Queuing System', icon: 'tabler:list', href: getPermalink('/products/queuing-system') },
-        {
-          text: 'User Feedback System',
-          icon: 'tabler:message-circle',
-          href: getPermalink('/products/user-feedback'),
-        },
-      ],
-    },
+    // Products section hidden while the studio/turno/revue product pages are being reworked.
+    // {
+    //   title: 'Products',
+    //   links: [
+    //     { text: 'studio · Custom Software', icon: 'tabler:app-window', href: getPermalink('/products/enterprise-app') },
+    //     { text: 'turno · Queue Management', icon: 'tabler:list', href: getPermalink('/products/queuing-system') },
+    //     {
+    //       text: 'revue · Customer Feedback',
+    //       icon: 'tabler:message-circle',
+    //       href: getPermalink('/products/user-feedback'),
+    //     },
+    //   ],
+    // },
   ],
   logo: {
     src: DefaultLogo.src,
@@ -65,6 +67,6 @@ export const footerData = {
     { text: 'Github', ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/konseptu' },
     { text: 'contact@konseptu.com', ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:contact@konseptu.com' },
   ],
-  footNote: '© Konseptu 2024. All rights reserved.',
+  footNote: '© Konseptu 2026. All rights reserved.',
   description: 'Upscale and digitize your business with us!',
 };
