@@ -33,7 +33,9 @@ i18n:
 
 apps:
   blog:
-    isEnabled: true
+    # Disabled: the default AstroWind demo posts were removed. Re-enable once
+    # real, Konseptu-specific articles exist in src/data/post/.
+    isEnabled: false
     postsPerPage: 6
 
     post:

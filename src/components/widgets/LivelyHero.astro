@@ -34,8 +34,8 @@ const backgroundImages = [enterpriseHero, infrastructureHero, queueingHero, user
           alt=""
           class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${i === 0 ? 'opacity-30' : 'opacity-0'} bg-hero-fade`}
           data-background-image
-          loading={'eager'}
-          fetchpriority={'high'}
+          loading={i === 0 ? 'eager' : 'lazy'}
+          fetchpriority={i === 0 ? 'high' : 'auto'}
           format="webp"
           widths={[640, 768, 1024, 1280, 1536, 1920]}
           sizes="100vw"

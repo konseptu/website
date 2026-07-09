@@ -1,0 +1,70 @@
+---
+// Site-wide structured data (JSON-LD) for local SEO / rich results.
+// NAP (name, address, phone) is kept consistent with src/pages/impressum.mdx
+// and src/navigation.ts — keep them in sync, and match your Google Business Profile.
+import { SITE } from 'astrowind:config';
+import logo from '~/assets/images/default.png';
+
+const logoUrl = new URL(logo.src, SITE.site).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE.site}/#organization`,
+      name: 'Konseptu IT Consultancy',
+      alternateName: 'Konseptu',
+      url: SITE.site,
+      logo: logoUrl,
+      image: logoUrl,
+      email: 'contact@konseptu.com',
+      telephone: '+639524778680',
+      foundingDate: '2024',
+      sameAs: ['https://facebook.com/konseptuit', 'https://github.com/konseptu'],
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${SITE.site}/#localbusiness`,
+      name: 'Konseptu IT Consultancy',
+      url: SITE.site,
+      image: logoUrl,
+      logo: logoUrl,
+      email: 'contact@konseptu.com',
+      telephone: '+639524778680',
+      priceRange: '$$',
+      parentOrganization: { '@id': `${SITE.site}/#organization` },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '143 F Ramos St, Cogon Ramos',
+        addressLocality: 'Cebu City',
+        addressRegion: 'Cebu',
+        postalCode: '6000',
+        addressCountry: 'PH',
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Cebu City' },
+        { '@type': 'AdministrativeArea', name: 'Visayas' },
+        { '@type': 'Country', name: 'Philippines' },
+      ],
+      knowsAbout: [
+        'Custom Software Development',
+        'Queue Management Systems',
+        'Customer Feedback Systems',
+        'IT Infrastructure',
+        'Networking',
+        'CCTV and Surveillance',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.site}/#website`,
+      url: SITE.site,
+      name: 'Konseptu',
+      publisher: { '@id': `${SITE.site}/#organization` },
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
