@@ -58,7 +58,6 @@ site:
   site: 'https://yoursite.com'
   base: '/'
   trailingSlash: false
-
 # Additional config options...
 ```
 
