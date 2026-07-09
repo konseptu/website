@@ -2,3 +2,9 @@ dist
 node_modules
 .github
 .changeset
+.claude
+
+# Standalone presentation deck rendered to PDF; layout is whitespace-sensitive
+presentation
+# Vendored brand token bundle (generated artifact, not source)
+ds-bundle
